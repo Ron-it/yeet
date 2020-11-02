@@ -8,6 +8,9 @@ public class Switch4
         switch( day )
 
         {
+            default:
+            name = "error";
+            break;
         case 1:
             name = "Monday";
             break;
@@ -35,9 +38,7 @@ public class Switch4
         case 7:
             name = "Sunday";
             break;
-        default:
-            name = "error";
-            break;
+
         }
     System.out.println(day + " = " + name);
     }
