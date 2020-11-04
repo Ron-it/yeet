@@ -11,7 +11,7 @@ public class Switch4
             default:
             name = "error";
             break;
-            
+
         case 1:
             name = "Monday";
             break;
