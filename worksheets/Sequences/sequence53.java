@@ -5,11 +5,12 @@ public class sequence53 {
 	public static void main (String[] args) 
 	{
 		double term = 1;
-		int sign = 1;
+		double sign = 1;
 		for (double i = 1 ; i <= 10000 ; i++)
-		{ IBIO.output(sign * term);
-		term = term + 3;
-		sign = sign * -1;
-		System.out.println("the sum is" + sign}
-	}
+		{ 
+			term = 1 - sign/term+2;
+			sign = sign * -1;	
+		}
+		System.out.println("the sum is " + term)};
+	
 }
