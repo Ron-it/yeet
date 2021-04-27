@@ -90,26 +90,27 @@ public class LinkedList
 		System.out.println(); //" <- End");
 	}
 	
-	public void remove(int element)
+	public boolean remove(int element)
 	{
 		if( isEmpty() == true )
 		{	System.out.println("ERROR - List is empty.");
-			return;
+			return false;
 		}
 		if( element == start.data )
 		{	start = start.next;
-			return;
+			return true;
 		}
 		Node temp1 = start;
 		Node temp2 = start.next;
 		while(temp2 != null)
 		{	if(temp2.data == element)
 			{	temp1.next = temp2.next;
-				return; // removing this does something!
+				return true; // removing this does something!
 			}
 			temp1 = temp1.next;
 			temp2 = temp2.next;
 		}
+		return false;
 	}
 	
 	public static void main (String[] args){
@@ -121,6 +122,22 @@ public class LinkedList
 				break;
 			}
 			a.append(x);
+			a.printList();
+		}while(a.isEmpty()==false);
+
+		do{
+		int r = IBIO.inputInt("Enter a value to search and remove: ");
+			if(r==0){
+				break;
+			}
+			boolean found = a.remove(r);
+
+			if(found==false){
+				IBIO.output("Item not found");
+			}
+			else{
+				IBIO.output("Item has been located and removed successfully");
+			}
 			a.printList();
 		}while(a.isEmpty()==false);
 	}
