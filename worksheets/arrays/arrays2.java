@@ -12,6 +12,7 @@ public class arrays2 {
         display(grade);
 
         IBIO.output("");
+        
 
         IBIO.output("Lowest: " + minimum(grade));
         IBIO.output("Highest: " + maximum(grade));
