@@ -118,9 +118,9 @@ public class HL_algo {
     }
 
     public static void main(String[] args) {
-        int[] someArray = { 12, 15, 9, 15, 15, 26 };
+        int[] A = { 12, 15, 9, 15, 15, 26 };
         int target = 15;
-        System.out.println(linearSearchV4(someArray, target));
+        System.out.println(linearSearchV4(A, target));
 
         /*
          * printBinaryValue(30); printBinaryValue(3825);
