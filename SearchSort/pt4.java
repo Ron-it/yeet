@@ -1,4 +1,4 @@
-public class pt4 {
+        public class pt4 {
 
     public static void main(String[] args) {
         int[] x = { 21, 35, 9, 46, 11, 18, 39 };
