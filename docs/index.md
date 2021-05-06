@@ -5,10 +5,12 @@ Hello. If you somehow managed to find this website, well you can have some free 
 If you would like to add/remove something from this website, you can find my contacts [here](#support-or-contact).
 
 Standard Level
+--------| --------- | ---------
 Paper 1 | Paper 2 | Internal Assessment 
 45% | 25% | 30%
 
 Higher Level
+--------| --------- | --------- | --------
 Paper 1 | Paper 2 | Paper 3 | Internal Assessment
 40% | 20%| 20% | 20%
 
