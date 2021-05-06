@@ -4,13 +4,13 @@ Hello. If you somehow managed to find this website, well you can have some free 
 
 If you would like to add/remove something from this website, you can find my contacts [here](#support-or-contact).
 
-### Table of Contents
+## Table of Contents
 
-- [Standard Level](#standard-level)
+- [Standard Level](#>standard-level<)
 
-- [Higher Level](#higher-level)
+- [Higher Level](#>higher-level<)
 
-- [Tools and Resources](#tools-and-resources)
+- [Tools and Resources](#>tools-and-resources<)
 
 ```markdown
 Syntax highlighted code block
@@ -30,13 +30,31 @@ Syntax highlighted code block
 [Link](url) and ![Image](src)
 ```
 
-### Standard Level
+## >Standard Level<
+For more detailed information see [IB CompSci Hub](https://ib.compscihub.net/about)
 
-### Higher Level
+### Paper 1
+Topic 1: System fundamentals
 
-### Tools and Resources
-> - [Cloud-based Gir repository hosting](https://github.com/)
+Topic 2: Computer organization
+
+Topic 3: Networks
+
+Topic 4: Computational thinking, problem-solving and programming
+
+
+## >Higher Level<
+Topic 5: Abstract data structures
+
+Topic 6: Resource management
+
+Topic 7: Control
+
+## >Tools and Resources<
+> - [Cloud-based Git repository hosting](https://github.com/)
+
 > - [Online Java Compiler](https://www.onlinegdb.com/)
+
 > - [Online Collaborative IDE](https://replit.com/~)
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
@@ -45,6 +63,6 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Ron-it/yeet/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+## Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
