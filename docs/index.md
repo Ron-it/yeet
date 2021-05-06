@@ -6,11 +6,11 @@ If you would like to add/remove something from this website, you can find my con
 
 ## Table of Contents
 
-- [Standard Level](#>standard-level<)
+- [Standard Level](#standard-level)
 
-- [Higher Level](#>higher-level<)
+- [Higher Level](#higher-level)
 
-- [Tools and Resources](#>tools-and-resources<)
+- [Tools and Resources](#tools-and-resources)
 
 ```markdown
 Syntax highlighted code block
@@ -30,7 +30,7 @@ Syntax highlighted code block
 [Link](url) and ![Image](src)
 ```
 
-## >Standard Level<
+## Standard Level
 For more detailed information see [IB CompSci Hub](https://ib.compscihub.net/about)
 
 ### Paper 1
@@ -43,7 +43,10 @@ Topic 3: Networks
 Topic 4: Computational thinking, problem-solving and programming
 
 
-## >Higher Level<
+## Higher Level
+For more detailed information see [IB CompSci Hub](https://ib.compscihub.net/about)
+
+### Paper 1
 Topic 5: Abstract data structures
 
 Topic 6: Resource management
