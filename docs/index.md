@@ -1,11 +1,14 @@
-## Welcome 
+## IB Computer Science
 
-Hello. If you somehow managed to find this website, well you can have some free IB CS notes and resources (w.i.p).
+Hello. If you somehow managed to find this website, well you can have some free IB Computer Science notes and resources (w.i.p).
 
-If you would like to add/remove something from this website, you can find my contacts [here](#support-or-Contact)
-### Markdown
+If you would like to add/remove something from this website, you can find my contacts [here](#support-or-contact).
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Table of Contents
+
+- [Standard Level](#standard-level)
+- [Higher Level](#higher-level)
+- [Tools and Resources](#tools-and-resources)
 
 ```markdown
 Syntax highlighted code block
@@ -24,6 +27,15 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```
+
+### Standard Level
+
+### Higher Level
+
+### Tools and Resources
+> - [Best website to store and backup your code](https://github.com/)
+> - [Online Java Compiler](https://www.onlinegdb.com/)
+> - [Online Collaborative IDE](https://replit.com/~)
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
