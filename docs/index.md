@@ -1,9 +1,8 @@
-## Welcome to GitHub Pages
+## Welcome 
 
-You can use the [editor on GitHub](https://github.com/Ron-it/yeet/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+Hello. If you somehow managed to find this website, well you can have some free IB CS notes and resources (w.i.p).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
+If you would like to add/remove something from this website, you can find my contacts [here](#support or Contact)
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
