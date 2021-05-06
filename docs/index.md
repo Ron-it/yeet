@@ -7,7 +7,9 @@ If you would like to add/remove something from this website, you can find my con
 ### Table of Contents
 
 - [Standard Level](#standard-level)
+
 - [Higher Level](#higher-level)
+
 - [Tools and Resources](#tools-and-resources)
 
 ```markdown
@@ -34,7 +36,9 @@ Syntax highlighted code block
 
 ### Tools and Resources
 > - [Best website to store and backup your code](https://github.com/)
+
 > - [Online Java Compiler](https://www.onlinegdb.com/)
+
 > - [Online Collaborative IDE](https://replit.com/~)
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
