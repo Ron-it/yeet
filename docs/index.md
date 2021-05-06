@@ -2,7 +2,7 @@
 
 Hello. If you somehow managed to find this website, well you can have some free IB CS notes and resources (w.i.p).
 
-If you would like to add/remove something from this website, you can find my contacts [here](#support or Contact)
+If you would like to add/remove something from this website, you can find my contacts [here](#support-or-Contact)
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
