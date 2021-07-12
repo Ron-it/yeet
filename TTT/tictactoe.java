@@ -1,173 +1,190 @@
 public class tictactoe {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        
         int count = 0;
         int pos;
         char symbol = 'o';
         char winner = ' ';
 
         int n = IBIO.inputInt("Enter the size of the grid: ");
-        if(n<3){
-            n=3;
+        if (n < 3) {
+            n = 3;
         }
 
-        char grid[][] = new char[n][n];
+        String Player1 = IBIO.inputString("Player 1: ");
+        String Player2 = IBIO.inputString("Player 2: ");
+        String whoseturn = "";
+        displayint(n);
 
-        for(int i=0; i<n; i++){
-            for(int j= 0; j<n; j++){
+        char grid[][] = new char[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
                 grid[i][j] = '-';
             }
         }
 
-        while( winner != 'x' && winner != 'o' && count<(n*n)){
-        
-        
+        whoseturn = Player1;
+          
+        while (winner != 'x' && winner != 'o' && count < (n * n)) {
+           
+            do {
+                pos = IBIO.inputInt("Enter the position for " + whoseturn + ": ");
+            } while (pos < 1 || pos > (n * n) || grid[(pos - 1) / n][(pos - 1) % n] != '-');
 
-        do{
-            pos = IBIO.inputInt("Enter the position: ");
-        }while(pos<1 || pos > (n*n) || grid[(pos-1)/n][(pos-1)%n]!='-');
+            grid[(pos - 1) / n][(pos - 1) % n] = symbol;
 
-        grid[(pos-1)/n][(pos-1)%n] = symbol;
+            display(grid);
 
-        display(grid);
+            count++;
 
-        count++;
+            winner = CheckWinner(grid);
 
-        winner = CheckWinner(grid);
+            if (winner == 'x' || winner == 'o') {
 
-if(winner == 'x' || winner == 'o'){
-    IBIO.output("The winner is " + winner);
-}
+                if (winner == 'x') {
+                    IBIO.output("The winner is " + Player1);
+                }
 
+                else if (winner == 'o') {
+                    IBIO.output("The winner is " + Player2);
+                }
 
-        if(symbol == 'o'){
-            symbol = 'x';
-        }
+            }
 
-        else{
-            symbol = 'o';
+            if (symbol == 'o') { //player1
+                symbol = 'x';
+                whoseturn = Player2;
+            
+            }
+
+            else {
+                symbol = 'o';
+                whoseturn = Player1;
+            }
         }
     }
-}
 
-    public static char CheckWinner(char grid[][]){
-        //horizontal rows
+    public static char CheckWinner(char grid[][]) {
+        // horizontal rows
         int n = grid.length;
         int count1 = 0;
         int count2 = 0;
-        for(int i=0; i<n; i++){
-            for(int j = 0; j<n; j++){
-                if(grid[i][j]== 'x'){
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 'x') {
                     count1++;
-                }
-                else if(grid[i][j]== 'o'){
+                } else if (grid[i][j] == 'o') {
                     count2++;
                 }
             }
-            if(count1==n){
+            if (count1 == n) {
                 return 'x';
-            }
-            else if(count2==n){
+            } else if (count2 == n) {
                 return 'o';
             }
-    
-        count1 = 0; //reset count
-        count2 = 0; //reset count
+
+            count1 = 0; // reset count
+            count2 = 0; // reset count
         }
 
-        //vertical colums
-        for(int i=0; i<n; i++){
-            for(int j = 0; j<n; j++){
-                if(grid[j][i]== 'x'){
+        // vertical colums
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[j][i] == 'x') {
                     count1++;
-                }
-                else if(grid[j][i]== 'o'){
+                } else if (grid[j][i] == 'o') {
                     count2++;
                 }
             }
-            if(count1==n){
+            if (count1 == n) {
                 return 'x';
-            }
-            else if(count2==n){
+            } else if (count2 == n) {
                 return 'o';
             }
-        
-        count1 = 0; //reset count
-        count2 = 0; //reset count
+
+            count1 = 0; // reset count
+            count2 = 0; // reset count
 
         }
 
+        // forward diagonal
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == j) {
+                    if (grid[i][j] == 'x') {
+                        count1++;
+                    }
 
-        //forward diagonal        
-        for(int i=0; i<n; i++){
-            for(int j = 0; j<n; j++){
-                if(i==j){
-                    if(grid[i][j]=='x'){
-                    count1++;
-                }
-            
-                    else if(grid[i][j]== 'o'){
-                    count2++;
+                    else if (grid[i][j] == 'o') {
+                        count2++;
+                    }
                 }
             }
         }
-    }
 
-        if(count1==n){
+        if (count1 == n) {
             return 'x';
         }
 
-        else if(count2==n){
+        else if (count2 == n) {
             return 'o';
         }
-        count1 = 0; //reset count
-        count2 = 0; //reset count
+        count1 = 0; // reset count
+        count2 = 0; // reset count
 
+        // backward diagonal
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i + j == n - 1) {
+                    if (grid[i][j] == 'x') {
+                        count1++;
+                    }
 
-
-
-
-//backward diagonal        
-for(int i=0; i<n; i++){
-    for(int j = 0; j<n; j++){
-        if(i+j == n-1){
-            if(grid[i][j]=='x'){
-            count1++;
+                    else if (grid[i][j] == 'o') {
+                        count2++;
+                    }
+                }
+            }
         }
-    
-            else if(grid[i][j]== 'o'){
-            count2++;
+
+        if (count1 == n) {
+            return 'x';
+        }
+
+        else if (count2 == n) {
+            return 'o';
+        }
+        count1 = 0; // reset count
+        count2 = 0; // reset count
+
+        return ' ';
+    }
+
+    public static void display(char grid[][]) {
+
+        int n = grid.length;
+        for (int i = 0; i < n; i++) {
+            IBIO.out("| ");
+            for (int j = 0; j < n; j++) {
+                IBIO.out(grid[i][j] + " | ");
+            }
+            IBIO.output(" ");
         }
     }
-}
-}
 
-if(count1==n){
-    return 'x';
-}
+    public static void displayint(int n) {
 
-else if(count2==n){
-    return 'o';
-}
-count1 = 0; //reset count
-count2 = 0; //reset count
+        int countr = 1;
+        for (int i = 0; i < n; i++) {
+            IBIO.out("| ");
+            for (int j = 0; j < n; j++) {
+                IBIO.out(countr + " | ");
+                countr++;
+            }
+            IBIO.output(" ");
 
-return ' ';
-}
-
-public static void display(char grid[][]){
-
-    int n = grid.length;
-    for(int i=0; i<n; i++){
-        IBIO.out("| ");
-        for(int j = 0; j<n; j++){
-            IBIO.out(grid[i][j] + " | ");
         }
-        IBIO.output(" ");
     }
-}
-
 
 }
