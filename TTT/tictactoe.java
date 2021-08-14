@@ -12,8 +12,8 @@ public class tictactoe {
             n = 3;
         }
 
-        String Player1 = IBIO.inputString("Player 1: ");
-        String Player2 = IBIO.inputString("Player 2: ");
+        String Player1 = IBIO.inputString("Player 1 enter your username: ");
+        String Player2 = IBIO.inputString("Player 2 enter your username: ");
         String whoseturn = "";
         displayint(n);
 
@@ -25,9 +25,9 @@ public class tictactoe {
         }
 
         whoseturn = Player1;
-          
+
         while (winner != 'x' && winner != 'o' && count < (n * n)) {
-           
+
             do {
                 pos = IBIO.inputInt("Enter the position for " + whoseturn + ": ");
             } while (pos < 1 || pos > (n * n) || grid[(pos - 1) / n][(pos - 1) % n] != '-');
@@ -52,10 +52,10 @@ public class tictactoe {
 
             }
 
-            if (symbol == 'o') { //player1
+            if (symbol == 'o') { // player1
                 symbol = 'x';
                 whoseturn = Player2;
-            
+
             }
 
             else {
