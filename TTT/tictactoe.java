@@ -42,11 +42,11 @@ public class tictactoe {
 
             if (winner == 'x' || winner == 'o') {
 
-                if (winner == 'x') {
+                if (winner == 'o') {
                     IBIO.output("The winner is " + Player1);
                 }
 
-                else if (winner == 'o') {
+                else if (winner == 'x') {
                     IBIO.output("The winner is " + Player2);
                 }
 
