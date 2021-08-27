@@ -9,16 +9,15 @@ public class main {
 
         test.setPrice(5);
 
-        if(x == 1){
+        if (x == 1) {
             System.out.println(fortnite.calculatePriceIncTax());
             System.out.println(fortnite.toString());
         }
 
-        else if(x == 2){
+        else if (x == 2) {
             System.out.println(test.calculatePriceIncTax());
             System.out.println(test.toString());
         }
-
 
     }
 }
