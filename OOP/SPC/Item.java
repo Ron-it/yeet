@@ -4,7 +4,6 @@ public class Item {
     private String rarity;
     private static double taxRate = 0.15;
 
-
     public Item(String name, double price, String rarity) {
         this.name = name;
         this.price = price;
@@ -20,13 +19,12 @@ public class Item {
     }
 
     public double calculatePriceIncTax() {
-        return ((price* taxRate) + price + 0.01);
+        return ((price * taxRate) + price + 0.01);
     }
 
-    public double getPrice(){
+    public double getPrice() {
         return price;
     }
-
 
     public boolean setPrice(double p) {
         if (p > 0) {
@@ -38,12 +36,8 @@ public class Item {
         return false;
     }
 
-
-
-    
-
     public String toString() {
-        return name.toUpperCase() + ", " + price + ", " + rarity.toUpperCase() ; 
+        return name.toUpperCase() + ", " + price + ", " + rarity.toUpperCase();
     }
 
 }
