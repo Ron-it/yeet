@@ -8,6 +8,9 @@ public class Item {
         this.name = name;
         this.price = price;
         this.rarity = rarity;
+        // this.name = IBIO.inputString(name);
+        // this.price = IBIO.inputDouble(price);
+        // this.rarity = IBIO.inputString(rarity);
     }
 
     public String getName() {
