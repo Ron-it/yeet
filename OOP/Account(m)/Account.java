@@ -34,6 +34,10 @@ public class Account {
     }
 
     public String toString() {
-        return String.format("Account number is" + accountNumber + ", Balance is: $" + balance);
+        return String.format("Account number is: " + "AN" + accountNumber + "AN" + ", Balance is: $" + balance);
+    }
+
+    public Account() {
+        super();
     }
 }
