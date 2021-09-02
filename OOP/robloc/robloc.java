@@ -23,6 +23,17 @@ public class robloc{
     }
 
 
+
+    @Override
+    public String toString() {
+        return "{" +
+            " username='" + getUsername() + "'" +
+            ", robux='" + getRobux() + "'" +
+            ", old='" + isOld() + "'" +
+            "}";
+    }
+
+
     public static void main(String[] args) {
         robloc fortnite = new robloc("fortnite", 120.0, true);
         System.out.println(fortnite.getUsername());
