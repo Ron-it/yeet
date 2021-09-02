@@ -45,6 +45,9 @@ public class main {
             double bal = IBIO.inputDouble("Enter initial balance: ");
             Account newAccount = new Account(an, bal);
 
+            System.out.println("Select an action");
+            System.out.println("1. View new account info");
+            System.out.println("2. ");
             System.out.println(newAccount.toString());
         }
 

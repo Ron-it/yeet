@@ -33,9 +33,15 @@ public class Account {
         balance = balance - amount;
     }
 
+    @Override
     public String toString() {
-        return String.format("Account number is: " + "AN" + accountNumber + "AN" + ", Balance is: $" + balance);
+        return "{" + " accountNumber='" + getAccountNumber() + "'" + ", balance='" + getBalance() + "'" + "}";
     }
+
+    // public String toString() {
+    // return String.format("Account number is: " + "AN" + accountNumber + "AN" + ",
+    // Balance is: $" + balance);
+    // }
 
     public Account() {
         super();
