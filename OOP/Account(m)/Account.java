@@ -35,7 +35,7 @@ public class Account {
 
     @Override
     public String toString() {
-        return "{" + " accountNumber='" + getAccountNumber() + "'" + ", balance='" + getBalance() + "'" + "}";
+        return "{" + " accountNumber='" + getAccountNumber() + "'" + ", balance='" + getBalance() + "'$" + "}";
     }
 
     // public String toString() {
