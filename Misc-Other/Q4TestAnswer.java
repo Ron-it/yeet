@@ -88,21 +88,21 @@ public class Q4TestAnswer
 	}
 
 
-	static int binarySearch(String[] array, String e)
+	static int binarySearch(String[] array, String key)
     {
-        int l = 0, r = array.length - 1;
-        while (l <= r) {
-            int m = l + (r - l) / 2;
-            int res = e.compareTo(array[m]);
+        int left = 0, right = array.length - 1;
+        while (left <= right) {
+            int middle = left + (right - left) / 2;
+            int res = key.compareTo(array[middle]);
  
             if (res == 0)
-                return m;
+                return middle;
  
             if (res > 0)
-                l = m + 1;
+                left = middle + 1;
  
             else
-                r = m - 1;
+                right = middle - 1;
         }
         return -1;
     }
