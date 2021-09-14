@@ -86,6 +86,28 @@ public class Q4TestAnswer
 		}
 		return -1;
 	}
+
+
+	static int binarySearch(String[] array, String e)
+    {
+        int l = 0, r = array.length - 1;
+        while (l <= r) {
+            int m = l + (r - l) / 2;
+            int res = e.compareTo(array[m]);
+ 
+            if (res == 0)
+                return m;
+ 
+            if (res > 0)
+                l = m + 1;
+ 
+            else
+                r = m - 1;
+        }
+        return -1;
+    }
+
+
 	
 	public static void remove(String[] a, int indexToRemove)
 	{
@@ -214,6 +236,19 @@ public class Q4TestAnswer
 		insert(a, element, i);
 		
 	}
+
+
+	static boolean isUnique(String[] array){
+		for (int i = 0; i < array.length; i++) {
+			for (int j = i + 1; j < array.length; j++) {
+				if (array[i] == array[j]) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
 	
 	public static void main (String[] args)
 	{
@@ -231,6 +266,9 @@ public class Q4TestAnswer
 		System.out.println("Looking for Lester [-1]: " + search(ascending, "Lester"));
 		System.out.println("Looking for anne   [-1]: " + search(ascending, "anne"));
 		System.out.println("Looking for Anne   [2] : " + search(ascending, "Anne"));
+		System.out.println("Looking for Lester [-1]: " + binarySearch(ascending, "Lester"));
+		System.out.println("Looking for anne   [-1]: " + binarySearch(ascending, "anne"));
+		System.out.println("Looking for Anne   [2] : " + binarySearch(ascending, "Anne"));
 		System.out.println("\noriginal array sorted [0]: " + isSorted(original));
 		System.out.println("ascending array sorted [1]: " + isSorted(ascending));
 		System.out.println("descending array sorted [-1]: " + isSorted(descending));
