@@ -75,7 +75,8 @@ public class Q4TestAnswer
 	
 	public static int search(String[] a, String data)
 	{
-		for(int i = 0; i < a.length; i++)
+		int i;
+		for(i = 0; i < a.length; i++)
 		{
 			if( a[i] != null)
 			{
@@ -84,13 +85,16 @@ public class Q4TestAnswer
 				}
 			}
 		}
+		System.out.println(i);
 		return -1;
 	}
 
 
-	static int binarySearch(String[] array, String key)
+	public static int binarySearch(String[] array, String key)
     {
-        int left = 0, right = array.length - 1;
+		int counter = 0;
+        int left = 0;
+		int right = array.length - 1;
         while (left <= right) {
             int middle = left + (right - left) / 2;
             int res = key.compareTo(array[middle]);
@@ -103,7 +107,9 @@ public class Q4TestAnswer
  
             else
                 right = middle - 1;
-        }
+        
+		counter++;	}
+		System.out.println(counter);
         return -1;
     }
 
