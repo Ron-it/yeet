@@ -3,85 +3,85 @@
  * 
  */
 
-
-public class Q4TestAnswer
-{
-	/* Note: lastIndex may be replaced by array.length, but in such case
-	 * ===== you have to make sure you are not processing an array element that is NULL
+public class Q4TestAnswer {
+	/*
+	 * Note: lastIndex may be replaced by array.length, but in such case ===== you
+	 * have to make sure you are not processing an array element that is NULL
 	 */
 	static int lastIndex = 0;
-	
-	public static void printArray(String[] a)
-	{	//				   lastIndex		
-		for(int i = 0; i < a.length; i++)
-		{
-			if(a[i] != null)
-			{	System.out.print( a[i] + "  ");
+
+	public static void printArray(String[] a) { // lastIndex
+		for (int i = 0; i < a.length; i++) {
+			if (a[i] != null) {
+				System.out.print(a[i] + "  ");
 			}
 		}
 		System.out.println();
 	}
-	
-	public static String[] clone(String[] a)
-	{	String[] b = new String[a.length];
-		for(int i = 0; i < a.length; i++)
-		{	b[i] = a[i];
+
+	public static String[] clone(String[] a) {
+		String[] b = new String[a.length];
+		for (int i = 0; i < a.length; i++) {
+			b[i] = a[i];
 		}
 		return b;
 	}
-	
-	public static boolean isFull(String[] a)
-	{
+
+	public static boolean isFull(String[] a) {
 		return lastIndex == a.length;
 	}
-	
-	public static void bubbleSort(String[] a)
-	{	int i = a.length-1; // index of last element in array
+
+	public static void bubbleSort(String[] a) {
+		int i = a.length - 1; // index of last element in array
 		boolean swapped = true; // flag to indicate when a swap is made
-		while(swapped==true && i >= 1)// while a swap happens and...
-		{	// ..there are elements to compare
+		int counter = 0;
+
+		while (swapped == true && i >= 1)// while a swap happens and...
+		{ // ..there are elements to compare
 			swapped = false; // assume no swaps are needed before
-			for(int j = 0; j < i; j++) // each pass
-			{	// start from first element until the last unsorted one
-				if( a[j].compareTo(a[j+1]) < 0) // if adjacent elements are
-				{	String temp = a[j];// not in order,
-					a[j] = a[j+1];  // swap them; use < for descending; > for ascending
-					a[j+1] = temp;  // signal that we made a swap
-					swapped = true; // so we do another pass
+			for (int j = 0; j < i; j++) // each pass
+			{
+				counter++;
+				// start from first element until the last unsorted one
+				if (a[j].compareTo(a[j + 1]) < 0) // if adjacent elements are
+				{
+					String temp = a[j];// not in order,
+					a[j] = a[j + 1]; // swap them; use < for descending; > for ascending
+					a[j + 1] = temp; // signal that we made a swap
+					swapped = true;
+					// so we do another pass
 				} // if no swap is made in a pass, we are done sorting!
 			} // end for (pass)
 			i--; // the last i-th item in the array is in its place
-		} //while// by the end of the pass, so we skip it
+		} // while// by the end of the pass, so we skip it
+		System.out.println(counter);
 	}
-	
-	public static void selectionSort(String[] a)
-	{	// for each element in the array...
-		for (int i = 0; i < a.length - 1; i++)
-		{	int index = i;
+
+	public static void selectionSort(String[] a) { // for each element in the array...
+		int counter = 0;
+		for (int i = 0; i < a.length - 1; i++) {
+			int index = i;
 			// compare it to the rest of the elements in the array
-			for (int j = i + 1; j < a.length; j++)
-			{	// find the index of the smallest/smaller element
-				if (a[j].compareToIgnoreCase(a[index]) < 0 )
-				{	index = j;
+			for (int j = i + 1; j < a.length; j++) { // find the index of the smallest/smaller element
+				counter++;
+				if (a[j].compareToIgnoreCase(a[index]) < 0) {
+					index = j;
 				}
 			}
 			// and swap it
-            String smaller = a[index];
-            a[index] = a[i];
-            a[i] = smaller;
-        }
+			String smaller = a[index];
+			a[index] = a[i];
+			a[i] = smaller;
+		}
+		System.out.println(counter);
 	}
-	
-	
-	public static int search(String[] a, String data)
-	{
+
+	public static int search(String[] a, String data) {
 		int i;
-		for(i = 0; i < a.length; i++)
-		{
-			if( a[i] != null)
-			{
-				if( a[i].equals(data) )
-				{	return i;
+		for (i = 0; i < a.length; i++) {
+			if (a[i] != null) {
+				if (a[i].equals(data)) {
+					return i;
 				}
 			}
 		}
@@ -89,162 +89,136 @@ public class Q4TestAnswer
 		return -1;
 	}
 
-
-	public static int binarySearch(String[] array, String key)
-    {
+	public static int binarySearch(String[] array, String key) {
 		int counter = 0;
-        int left = 0;
+		int left = 0;
 		int right = array.length - 1;
-        while (left <= right) {
-            int middle = left + (right - left) / 2;
-            int res = key.compareTo(array[middle]);
- 
-            if (res == 0)
-                return middle;
- 
-            if (res > 0)
-                left = middle + 1;
- 
-            else
-                right = middle - 1;
-        
-		counter++;	}
+		while (left <= right) {
+			int middle = left + (right - left) / 2;
+			int res = key.compareTo(array[middle]);
+
+			if (res == 0)
+				return middle;
+
+			if (res > 0)
+				left = middle + 1;
+
+			else
+				right = middle - 1;
+
+			counter++;
+		}
 		System.out.println(counter);
-        return -1;
-    }
+		return -1;
+	}
 
-
-	
-	public static void remove(String[] a, int indexToRemove)
-	{
-		if(indexToRemove < 0 || indexToRemove > lastIndex)
-		{	System.out.println("Error-Index to remove is out of bounds");
+	public static void remove(String[] a, int indexToRemove) {
+		if (indexToRemove < 0 || indexToRemove > lastIndex) {
+			System.out.println("Error-Index to remove is out of bounds");
 			return;
 		}
-		for(int i = indexToRemove; i < lastIndex-1; i++)
-		{
-			a[i] = a[i+1];
+		for (int i = indexToRemove; i < lastIndex - 1; i++) {
+			a[i] = a[i + 1];
 		}
 		lastIndex--;
-		for(int i = lastIndex; i < a.length; i++)
-		{	a[i] = null;
+		for (int i = lastIndex; i < a.length; i++) {
+			a[i] = null;
 		}
 	}
-	
-	public static boolean isSortedAsc(String[] a)
-	{
-		for(int i = 0; i < lastIndex-1; i++)
-		{
-			if(a[i] != null && a[i+1] != null)
-			{
-				if(a[i].compareTo(a[i+1]) > 0)
-				{	return false;
+
+	public static boolean isSortedAsc(String[] a) {
+		for (int i = 0; i < lastIndex - 1; i++) {
+			if (a[i] != null && a[i + 1] != null) {
+				if (a[i].compareTo(a[i + 1]) > 0) {
+					return false;
 				}
 			}
 		}
 		return true;
 	}
 
-	public static boolean isSortedDesc(String[] a)
-	{
-		for(int i = 0; i < lastIndex-1; i++)
-		{
-			if(a[i] != null && a[i+1] != null)
-			{
-				if(a[i].compareTo(a[i+1]) < 0)
-				{	return false;
+	public static boolean isSortedDesc(String[] a) {
+		for (int i = 0; i < lastIndex - 1; i++) {
+			if (a[i] != null && a[i + 1] != null) {
+				if (a[i].compareTo(a[i + 1]) < 0) {
+					return false;
 				}
 			}
 		}
 		return true;
 	}
-	
-	public static int isSorted(String[] a)
-	{
-		if( isSortedAsc(a) )
-		{	return 1;
+
+	public static int isSorted(String[] a) {
+		if (isSortedAsc(a)) {
+			return 1;
 		}
-		if( isSortedDesc(a) )
-		{	return -1;
+		if (isSortedDesc(a)) {
+			return -1;
 		}
 		return 0;
 	}
-	
-	public static void removeDuplicates(String[] a)
-	{
-		if( isSorted(a) != 1 )
-		{	System.out.println("Error-Array not sorted in ascending order");
+
+	public static void removeDuplicates(String[] a) {
+		if (isSorted(a) != 1) {
+			System.out.println("Error-Array not sorted in ascending order");
 			return;
 		}
-		for(int i = 0; i < lastIndex; i++)
-		{
-			for(int j = 0; j < lastIndex; j++)
-			{
-				if(i != j && a[i].equals(a[j]))
-				{	System.out.println("Removed: " + a[j]);
+		for (int i = 0; i < lastIndex; i++) {
+			for (int j = 0; j < lastIndex; j++) {
+				if (i != j && a[i].equals(a[j])) {
+					System.out.println("Removed: " + a[j]);
 					remove(a, j);
 				}
 			}
 		}
 	}
 	/*
-	//simple and efficient (single loop), but only good to remove 2 (duplicates)
-	public static void removeDuplicates(String[] a)
-	{
-		if( isSorted(a) != 1 )
-		{	System.out.println("Error-Array not sorted in ascending order");
-			return;
-		}
-		for(int i = 0; i < lastIndex-1; i++)
-		{
-			if(a[i].equals(a[i+1]))
-			{	remove(a, i+1);
-			}
-		}
-	}
-	*/
-	
-	public static void insert(String[] a, String data, int index)
-	{	lastIndex++;
-		for(int i = lastIndex-1; i > index; i--)
-		{	a[i] = a[i-1];
+	 * //simple and efficient (single loop), but only good to remove 2 (duplicates)
+	 * public static void removeDuplicates(String[] a) { if( isSorted(a) != 1 ) {
+	 * System.out.println("Error-Array not sorted in ascending order"); return; }
+	 * for(int i = 0; i < lastIndex-1; i++) { if(a[i].equals(a[i+1])) { remove(a,
+	 * i+1); } } }
+	 */
+
+	public static void insert(String[] a, String data, int index) {
+		lastIndex++;
+		for (int i = lastIndex - 1; i > index; i--) {
+			a[i] = a[i - 1];
 		}
 		a[index] = data;
 	}
-	
-	public static void insert(String[] a, String element)
-	{
-		if(isFull(a))
-		{	System.out.println("Array full.");
+
+	public static void insert(String[] a, String element) {
+		if (isFull(a)) {
+			System.out.println("Array full.");
 			return;
 		}
-		if(isSorted(a) != 1)
-		{	System.out.println("Array NOT sorted in ascending order.");
+		if (isSorted(a) != 1) {
+			System.out.println("Array NOT sorted in ascending order.");
 			return;
 		}
-		if( search(a, element) != -1 )
-		{	System.out.println(element + " is already in the array");
+		if (search(a, element) != -1) {
+			System.out.println(element + " is already in the array");
 			return;
 		}
-		if(element.compareToIgnoreCase(a[0]) < 0)
-		{	insert(a, element, 0);
+		if (element.compareToIgnoreCase(a[0]) < 0) {
+			insert(a, element, 0);
 			return;
 		}
-		if(element.compareToIgnoreCase(a[lastIndex-1]) > 0)
-		{	a[lastIndex] = element;
+		if (element.compareToIgnoreCase(a[lastIndex - 1]) > 0) {
+			a[lastIndex] = element;
 			lastIndex++;
 			return;
 		}
 		int i = 0;
-		while( i < lastIndex-1 && a[i].compareToIgnoreCase(element) < 0 )
-		{	i++;
+		while (i < lastIndex - 1 && a[i].compareToIgnoreCase(element) < 0) {
+			i++;
 		}
 		insert(a, element, i);
-		
+
 	}
 
-
-	static boolean isUnique(String[] array){
+	static boolean isUnique(String[] array) {
 		for (int i = 0; i < array.length; i++) {
 			for (int j = i + 1; j < array.length; j++) {
 				if (array[i] == array[j]) {
@@ -255,11 +229,18 @@ public class Q4TestAnswer
 		return true;
 	}
 
-	
-	public static void main (String[] args)
-	{
-		String[] original = { "Abe", "Bob", "Gale", "Ed", "Faye", "Ives", "Chuck", "Abe", "Gale", "Anne", "Gale" }; // added a 3rd Gale to test duplicate removal algos
-		String[] ascending  = clone(original);
+	public static void main(String[] args) {
+		String[] original = { "Abe", "Bob", "Ed", "Faye", "Gale", "Ives" }; // added //, "Chuck", "Abe", "Gale", "Anne",
+																			// "Gale"
+																			// a
+																			// 3rd
+																			// Gale
+																			// to
+																			// test
+																			// duplicate
+																			// removal
+																			// algos
+		String[] ascending = clone(original);
 		String[] descending = clone(original);
 		selectionSort(ascending);
 		bubbleSort(descending);
@@ -306,4 +287,3 @@ public class Q4TestAnswer
 		printArray(ascending);
 	}
 }
-
