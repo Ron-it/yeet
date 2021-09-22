@@ -30,10 +30,10 @@ public class Employee {
     }
 
     public void setMonthlySalary(double monthlySalary) {
-        if (monthlySalary < 0) {
-            monthlySalary = 0.0;
-        }
         this.monthlySalary = monthlySalary;
+        if (monthlySalary < 0) {
+            this.monthlySalary = 0.0;
+        }
     }
 
     @Override

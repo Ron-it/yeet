@@ -3,8 +3,14 @@ public class Car {
     public double regularPrice;
     public String color;
 
-    public void getSalePrice(double price) {
+    public Car(int speed, double regularPrice, String color) {
+        this.speed = speed;
+        this.regularPrice = regularPrice;
+        this.color = color;
+    }
 
+    public double getSalePrice() {
+        return this.regularPrice;
     }
 
 }
