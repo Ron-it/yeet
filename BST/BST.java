@@ -44,6 +44,25 @@ public class BST
         add(this.root, n);
     }
 
+    public boolean search(int data){
+        return search(this.root, data);
+    }
+
+    private boolean search(BinaryNode node, int data){
+        if(node == null){
+            return false;
+        }
+        if(data == node.data){
+            return true;
+        }
+        else if(data < node.data){
+            return search(node.left, data);
+        }
+        else{
+            return search(node.right, data);
+        }
+    }
+
     private void inOrder(BinaryNode node)
     {
         if (node.getLeft() != null)
@@ -73,6 +92,16 @@ public class BST
         }
     }
 
+    private void descendingOrder(BinaryNode node){
+        if(node.getLeft() != null){
+            preOrder(node.getRight());
+        }
+        System.out.print(node + " ");
+        if(node.getRight() != null){
+            preOrder(node.getLeft());
+        }
+    }
+
     public static void main(String[] args)
     {
         BST b = new BST(5);
@@ -80,13 +109,20 @@ public class BST
         b.add(3);
         b.add(9);
         b.add(2);
-        System.out.print("InOrder traversal: \n");
+        System.out.print("InOrder traversal:");
         b.inOrder(b.root);
-        System.out.print("preOrder traversal: \n");
-        b.preOrder(b.root);
-        System.out.print("postOrder traversal: \n");
         System.out.println();
+        System.out.print("preOrder traversal:");
+        b.preOrder(b.root);
+        System.out.println();
+        System.out.print("postOrder traversal:");
         b.postOrder(b.root);
+        System.out.println();
+        System.out.print("descendingOrder traversal:");
+        b.descendingOrder(b.root);
+        System.out.println();
+        System.out.println("Search for 12" + b .search(12));
+        System.out.println("Search for 42" + b.search(42));
     }
 
 }

@@ -1,8 +1,8 @@
 public class BinaryNode
 {
-    private int data;// can be replaced by any class or wrapper class
-    private BinaryNode left;
-    private BinaryNode right;
+    public int data;// can be replaced by any class or wrapper class
+    public BinaryNode left;
+    public BinaryNode right;
 
     public BinaryNode(int data)
     {   this.data = data;
