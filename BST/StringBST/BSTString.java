@@ -5,7 +5,7 @@ public class BSTString {
     public BSTString(String data)
     {
         this.root = new BinaryNodeString(data);
-        System.out.printf("Buidling BST with root %s\n", data);
+        System.out.printf("Building BST with root %s\n", data);
     }
 
     public boolean isEmpty()
